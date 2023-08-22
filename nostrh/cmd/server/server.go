@@ -35,7 +35,7 @@ func Start(port string) {
 		if ev != nil {
 			switch ev.Kind {
 			case consts.KindWebhostHTML:
-				ctx.Data(http.StatusOK, "text/html", []byte(ev.Content))
+				ctx.Data(http.StatusOK, "text/html; charset=utf-8", []byte(ev.Content))
 			case consts.KindWebhostCSS:
 				ctx.Data(http.StatusOK, "text/css", []byte(ev.Content))
 			case consts.KindWebhostJS:
